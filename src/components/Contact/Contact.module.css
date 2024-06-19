@@ -1,0 +1,18 @@
+.contactItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	border: 1px solid #646cff;
+	border-radius: 8px;
+	padding: 12px;
+	flex-shrink: 0;
+	flex-basis: 280px;
+}
+
+.contactContext {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 8px;
+}
