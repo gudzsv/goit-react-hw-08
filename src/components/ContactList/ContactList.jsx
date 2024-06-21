@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import Contact from '../Contact/Contact';
 
 import styles from './ContactList.module.css';
+
+import Loader from '../Loader/Loader';
 import {
 	selectError,
 	selectFilteredContacts,
 	selectLoading,
-} from '../../redux/contactsSlice';
-
-import Loader from '../Loader/Loader';
+} from '../../redux/contacts/selectors';
 
 const ContactList = () => {
 	const loading = useSelector(selectLoading);
