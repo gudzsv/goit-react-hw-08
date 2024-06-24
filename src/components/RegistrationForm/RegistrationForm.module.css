@@ -1,0 +1,49 @@
+.form {
+	width: 320px;
+}
+
+.label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 16px;
+}
+
+.formContact {
+	margin: auto;
+	border: 1px solid #646cff;
+	border-radius: 8px;
+	width: 320px;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+.formLabel {
+	text-align: start;
+	display: block;
+	margin-bottom: 8px;
+}
+
+.formInputWrapper {
+	position: relative;
+}
+
+.formInput {
+	border-style: none;
+	border-radius: 8px;
+	padding-block: 8px;
+	padding-inline: 12px;
+	min-width: 300px;
+	width: 90%;
+	margin-bottom: 30px;
+}
+
+.formErrorMessage {
+	position: absolute;
+	top: 32px;
+	left: 8px;
+	color: tomato;
+}
+
+.formButton {
+	margin-top: 30px;
+}

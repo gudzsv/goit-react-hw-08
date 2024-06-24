@@ -1,14 +1,13 @@
-
+import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 
 const RegisterPage = () => {
-  return (
-    <div>
-        <form>
-            
-        </form>
-      
-    </div>
-  )
-}
+	return (
+		<div>
+			<DocumentTitle>Registration</DocumentTitle>
+			<RegistrationForm />
+		</div>
+	);
+};
 
-export default RegisterPage
+export default RegisterPage;
