@@ -1,5 +1,14 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
 .link {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 	text-decoration: none;
 	padding: 12px;
 	font-weight: 700;

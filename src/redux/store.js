@@ -15,7 +15,7 @@ import { filtersReducer } from './filters/slice';
 import { authReducer } from './auth/slice';
 
 const persistAuthConfig = {
-	key: 'root',
+	key: 'token',
 	storage,
 	whitelist: ['token'],
 };

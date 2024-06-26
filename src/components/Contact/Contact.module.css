@@ -16,3 +16,8 @@
 	align-items: center;
 	gap: 8px;
 }
+
+.btnWrapper {
+	display: flex;
+	gap: 8px;
+}

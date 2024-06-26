@@ -2,6 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
+import { IoIosPersonAdd } from 'react-icons/io';
+import toast from 'react-hot-toast';
 
 import styles from './ContactForm.module.css';
 import { addContact } from '../../redux/contacts/operations';
@@ -24,15 +26,26 @@ const initialValues = {
 
 const ContactForm = () => {
 	const nameFieldId = useId();
+
 	const numberFieldId = useId();
 
 	const dispatch = useDispatch();
 
 	const handleSubmit = (values, actions) => {
-		dispatch(addContact(values));
+		dispatch(addContact(values))
+			.unwrap()
+			.then((result) => {
+				toast.success(`Contact ${values.name} Successfully added!`);
+				console.log('result: ', result);
 
-		actions.setSubmitting(false);
-		actions.resetForm();
+				actions.setSubmitting(false);
+				actions.resetForm();
+			})
+			.catch((error) => {
+				toast.error('Failed to add contact');
+
+				actions.setSubmitting(false);
+			});
 	};
 
 	return (
@@ -51,6 +64,7 @@ const ContactForm = () => {
 							className={styles.formInput}
 							type='text'
 							name='name'
+							placeholder='Enter FirstName and LastName'
 							id={nameFieldId}
 						/>
 						<ErrorMessage
@@ -69,6 +83,7 @@ const ContactForm = () => {
 							type='tel'
 							inputMode='tel'
 							name='number'
+							placeholder='Phone format: XXX-XXX-XXXX'
 							id={numberFieldId}
 						/>
 						<ErrorMessage
@@ -83,7 +98,8 @@ const ContactForm = () => {
 						type='submit'
 						disabled={isSubmitting}
 					>
-						Add contact
+						<IoIosPersonAdd />
+						<span>Add</span>
 					</button>
 				</Form>
 			)}

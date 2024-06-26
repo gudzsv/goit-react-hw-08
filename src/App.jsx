@@ -1,7 +1,7 @@
 import './App.css';
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router';
 
 import { selectIsRefreshing } from './redux/auth/selectors';
@@ -14,6 +14,7 @@ const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 import { refreshUser } from './redux/auth/operations';
 
@@ -60,9 +61,16 @@ function App() {
 								/>
 							}
 						/>
+						<Route
+							path='*'
+							element={
+								<RestrictedRoute redirectTo='*' component={<NotFoundPage />} />
+							}
+						/>
 					</Routes>
 				</Layout>
 			)}
+			<Toaster position='top-right' reverseOrder={false} />
 		</>
 	);
 }
