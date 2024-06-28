@@ -12,9 +12,26 @@
 	text-decoration: none;
 	padding: 12px;
 	font-weight: 700;
-	color: #2a363b;
+	color: #fff;
 }
 
-.link.active {
-	color: #e84a5f;
+.active {
+	color: #ff6347;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+
+	button {
+		background-color: #f9f9f9;
+	}
+	.link {
+		color: #213547;
+	}
+	.active {
+		color: #ff6347;
+	}
 }

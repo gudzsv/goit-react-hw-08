@@ -54,7 +54,6 @@ const contactsSlice = createSlice({
 
 			.addCase(updateContact.pending, handlePending)
 			.addCase(updateContact.fulfilled, (state, { payload }) => {
-				console.log('payload: ', payload);
 				state.error = null;
 				state.loading = false;
 				state.items = state.items.map((item) =>

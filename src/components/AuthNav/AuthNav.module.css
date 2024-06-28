@@ -3,9 +3,15 @@
 	text-decoration: none;
 	padding: 12px;
 	font-weight: 700;
-	color: #2a363b;
+	color: var(--white);
 }
 
-.link.active {
-	color: #e84a5f;
+@media (prefers-color-scheme: light) {
+	.link {
+		color: var(--dark);
+	}
+}
+
+.active {
+	color: var(--orange);
 }

@@ -3,11 +3,17 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
-	border: 1px solid #646cff;
+	border: 2px solid var(--deep-dark);
 	border-radius: 8px;
 	padding: 12px;
 	flex-shrink: 0;
 	flex-basis: 280px;
+}
+
+@media (prefers-color-scheme: light) {
+	.contactItem {
+		border: 2px solid var(--light-silver);
+	}
 }
 
 .contactContext {
@@ -15,9 +21,21 @@
 	justify-content: flex-start;
 	align-items: center;
 	gap: 8px;
+	color: var(--orange);
 }
+
+.textWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* .contactContext span {
+	color: var(--white);
+} */
 
 .btnWrapper {
 	display: flex;
+	flex-direction: column;
 	gap: 8px;
 }

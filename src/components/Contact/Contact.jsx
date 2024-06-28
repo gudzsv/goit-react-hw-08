@@ -21,14 +21,14 @@ const Contact = ({ contact }) => {
 
 	useEffect(() => {
 		const body = bodyRef.current;
-		isEditModalOpen
+		isEditModalOpen || isDeleteModalOpen
 			? body.classList.add('disable-scroll')
 			: body.classList.remove('disable-scroll');
 
 		return () => {
 			body.classList.remove('disable-scroll');
 		};
-	}, [isEditModalOpen]);
+	}, [isEditModalOpen, isDeleteModalOpen]);
 
 	const handleDelete = () => {
 		handleCloseDeleteModal();
@@ -51,7 +51,7 @@ const Contact = ({ contact }) => {
 	return (
 		<>
 			<li className={styles.contactItem}>
-				<div>
+				<div className={styles.textWrapper}>
 					<div className={styles.contactContext}>
 						<IoIosContact />
 						<span>{contact.name}</span>

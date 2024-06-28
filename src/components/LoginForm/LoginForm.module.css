@@ -10,13 +10,17 @@
 
 .formContact {
 	margin: auto;
-	border: 1px solid #646cff;
+	border: 2px solid var(--deep-dark);
 	border-radius: 8px;
 	width: 320px;
 	padding: 20px;
 	margin-bottom: 40px;
 }
-
+@media (prefers-color-scheme: light) {
+	.formContact {
+		border: 2px solid var(--light-silver);
+	}
+}
 .formLabel {
 	text-align: start;
 	display: block;

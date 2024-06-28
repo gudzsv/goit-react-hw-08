@@ -2,7 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { IoIosPersonAdd } from 'react-icons/io';
+import { ImCancelCircle } from 'react-icons/im';
+import { FaRegSave } from 'react-icons/fa';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 import styles from './EditContactModal.module.css';
@@ -52,7 +53,7 @@ const EditContactModal = ({ handleUpdateContact, handleCloseModal, id }) => {
 	useHotkeys('esc', () => handleCloseModal());
 
 	return (
-		<div className='styles.modalOverlay'>
+		<div className={styles.modalOverlay}>
 			<Formik
 				enableReinitialize
 				initialValues={initialValues}
@@ -101,26 +102,27 @@ const EditContactModal = ({ handleUpdateContact, handleCloseModal, id }) => {
 									component='div'
 								/>
 							</div>
-
-							<button
-								className={styles.formButton}
-								type='submit'
-								disabled={isSubmitting}
-							>
-								<IoIosPersonAdd />
-								<span>Save</span>
-							</button>
-							<button
-								className={styles.formButton}
-								type='button'
-								onClick={() => {
-									handleReset();
-									handleCloseModal();
-								}}
-							>
-								<IoIosPersonAdd />
-								<span>Cancel</span>
-							</button>
+							<div className={styles.btnWrapper}>
+								<button
+									className={styles.formButton}
+									type='submit'
+									disabled={isSubmitting}
+								>
+									<FaRegSave />
+									<span>Save</span>
+								</button>
+								<button
+									className={styles.formButton}
+									type='button'
+									onClick={() => {
+										handleReset();
+										handleCloseModal();
+									}}
+								>
+									<ImCancelCircle />
+									<span>Cancel</span>
+								</button>
+							</div>
 						</Form>
 					</div>
 				)}

@@ -15,7 +15,6 @@ import styles from './ContactsPage.module.css';
 import Loader from '../../components/Loader/Loader';
 
 const ContactsPage = () => {
-	// const contacts = useSelector(selectContacts);
 	const dispatch = useDispatch();
 	const loading = useSelector(selectLoading);
 	const error = useSelector(selectError);
@@ -32,7 +31,9 @@ const ContactsPage = () => {
 				<SearchBox />
 				{loading && <Loader />}
 				{error && <ErrorMessage />}
-				{contacts.length > 0 && <ContactList contacts={contacts} />}
+				{contacts.length > 0 && !error && !loading && (
+					<ContactList contacts={contacts} />
+				)}
 			</div>
 		</div>
 	);

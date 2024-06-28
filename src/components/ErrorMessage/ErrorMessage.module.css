@@ -2,7 +2,7 @@
 	height: 30vh;
 	width: 60vw;
 	margin: 0 auto;
-	border: 1px dashed #646cff;
+	border: 1px dashed var(--orange);
 	border-radius: 12px;
 	padding: 20px;
 	display: flex;
@@ -13,11 +13,11 @@
 .errorText {
 	text-transform: uppercase;
 	font-size: 1.5em;
-	color: #646cff;
+	color: var(--orange);
 }
 
 .errorIcon {
 	width: 10em;
 	height: 10em;
-	color: orangered;
+	color: var(--orange);
 }

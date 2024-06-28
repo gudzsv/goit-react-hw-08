@@ -6,9 +6,9 @@ const Loader = () => {
 		<div className={styles.loader}>
 			<ThreeDots
 				visible={true}
-				height='80'
-				width='80'
-				color='#646cff'
+				height='40'
+				width='40'
+				color='#d84315'
 				radius='9'
 				ariaLabel='three-dots-loading'
 				wrapperStyle={{}}

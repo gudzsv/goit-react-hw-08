@@ -2,5 +2,5 @@
 	margin: auto;
 }
 .title {
-	color: tomato;
+	color: var(--orange);
 }
